@@ -33,4 +33,25 @@ Route::put("/animals/{id}", [AnimalController::class, 'update']);
 Route::delete("/animals/{id}", [AnimalController::class, 'destroy']);
 
 # Routing untuk students
+
+/**
+ * route api resource bawaan laravel
+ * Route::apiResource("/students", StudentsController::class);
+ */
+
+# Method GET All Resource
 Route::get("/students", [StudentsController::class, 'index']);
+
+# Method POST Add Resource
+Route::post('/students', [StudentsController::class, 'store']);
+
+# Method GET Detail Resource
+Route::get('/students/{students}', [StudentsController::class, 'show']);
+
+# Method UPDATE Resource
+Route::put('/students/{students}', [StudentsController::class, 'update']);
+
+# Method DELETE Resource
+Route::delete('/students/{id}', [StudentsController::class, 'destroy']);
+
+# Flow: Route, Controller, Model
