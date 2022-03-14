@@ -1,19 +1,7 @@
-// import express dan router
-const express = require("express");
-const router = require("./routes/api.js");
+/**
+ * TODO 1: SETUP SERVER USING EXPRESS.JS.
+ * UBAH SERVER DI BAWAH MENGGUNAKAN EXPRESS.JS.
+ * SERVER INI DIBUAT MENGGUNAKAN NODE.JS NATIVE.
+ */
 
-// Membuat object express
-const app = express();
-
-// Menggunakan middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Menggunakan routing (router)
-app.use(router);
-
-// Mendefinisikan port.
-const PORT = 3000;
-app.listen(PORT, () =>
-  console.log(`Server running at: http://localhost:${PORT}`)
-);
+(function(){"use strict";require("http").createServer(function(t,e){e.writeHead(200,{"Content-Type":"text/html"}),e.write("Final Project UAS - Good Luck."),e.end()}).listen(3e3,function(){console.log("[Server] Running at: http://localhost:3000")})}).call(this);
