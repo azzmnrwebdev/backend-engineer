@@ -2,7 +2,7 @@
   "dependencies": {
     "express": "^4.17.2"
   },
-  "name": "praktikum-11",
+  "name": "task-11",
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {},
@@ -11,7 +11,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Muhammad Azzam Nur Alwi Mansyur",
   "license": "ISC",
   "description": ""
 }

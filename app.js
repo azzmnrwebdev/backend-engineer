@@ -1,15 +1,16 @@
-const express = require("express"); // import express
+// import express dan routing
+const express = require("express");
+const router = require("./routes/api.js");
+const bodyParser = require("body-parser");
 
-const app = express(); // buat object express
+// Membuat object express
+const app = express();
 
-// menggunakan middleware
-app.use(express.json());
+// Menggunakan middleware
+app.use(bodyParser.json());
 
-// mendefinisikan route
-const router = require("./routes/api");
+// Menggunakan routing (router)
 app.use(router);
 
-// mendefinisikan port
-app.listen(3000, () => {
-  console.log("Server running at http://localhost/3000");
-});
+// Mendefinisikan port.
+app.listen(3000, () => console.log("Server running at http://localhost/3000"));
