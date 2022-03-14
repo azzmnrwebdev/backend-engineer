@@ -1,27 +1,33 @@
-// Import data students dari folder models/Student.js
-const Student = require("../models/Student.js");
+// import Model Student
+const Student = require("../models/Student");
 
-// Membuat Class StudentController
 class StudentController {
+  // menambahkan keyword async
   async index(req, res) {
-    // Tampilkan data students
+    // memanggil method static all dengan async await.
     const students = await Student.all();
+
     const data = {
-      message: "Menampilkan semua students",
+      message: "Menampilkkan semua students",
       data: students,
     };
 
     res.json(data);
   }
 
-  store(req, res) {
-    const { nama } = req.body;
+  async store(req, res) {
+    /**
+     * TODO 2: memanggil method create.
+     * Method create mengembalikan data yang baru diinsert.
+     * Mengembalikan response dalam bentuk json.
+     */
+
     // Tambahkan data students
-    dataStudents.push(nama);
+    const students = await Student.create(req.body);
 
     const data = {
-      message: `Menambahkan data student: ${nama}`,
-      data: dataStudents,
+      message: "Menambahkan data student",
+      data: students,
     };
 
     res.json(data);
@@ -31,12 +37,9 @@ class StudentController {
     const { id } = req.params;
     const { nama } = req.body;
 
-    // Update data students
-    dataStudents[id] = nama;
-
     const data = {
       message: `Mengedit student id ${id}, nama ${nama}`,
-      data: dataStudents,
+      data: [],
     };
 
     res.json(data);
@@ -45,12 +48,9 @@ class StudentController {
   destroy(req, res) {
     const { id } = req.params;
 
-    // Hapus data students
-    dataStudents.splice(1, id);
-
     const data = {
       message: `Menghapus student id ${id}`,
-      data: dataStudents,
+      data: [],
     };
 
     res.json(data);
